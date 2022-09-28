@@ -8,16 +8,16 @@ public class Studente {
 
   private static int contatore = 0;
 
-  public static int getContatore() {
-    return contatore;
-  }
-
   public Studente(String nome, String cognome, String matricola) {
     this.matricola = matricola;
     this.nome = nome;
     this.cognome = cognome;
 
     contatore++;
+  }
+
+  public static int getContatore() {
+    return contatore;
   }
 
   public String getMatricola() {
