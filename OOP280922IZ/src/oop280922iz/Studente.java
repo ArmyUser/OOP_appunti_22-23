@@ -6,10 +6,18 @@ public class Studente {
   private String nome;
   private String cognome;
 
-  public Studente(String matricola, String nome, String cognome) {
+  private static int contatore = 0;
+
+  public static int getContatore() {
+    return contatore;
+  }
+
+  public Studente(String nome, String cognome, String matricola) {
     this.matricola = matricola;
     this.nome = nome;
     this.cognome = cognome;
+
+    contatore++;
   }
 
   public String getMatricola() {
