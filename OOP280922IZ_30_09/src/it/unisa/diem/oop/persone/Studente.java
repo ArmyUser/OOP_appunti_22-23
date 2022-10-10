@@ -49,11 +49,11 @@ public class Studente {
   }
 
   public void stampaInfo() {
-    System.out.println("***");
+    System.out.println("****");
     System.out.println("Nome: " + this.nome);
     System.out.println("Cognome: " + this.cognome);
     System.out.println("Matricola: " + this.matricola);
-    System.out.println("***");
+    System.out.println("****");
   }
 
 }
