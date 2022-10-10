@@ -5,89 +5,78 @@
  */
 package it.unisa.diem.oop.spazi;
 
-import it.unisa.diem.oop.persone.Studente;
+import it.unisa.diem.oop.persone.Persona;
 
 /**
  *
  * @author lucagreco
  */
-public class Aula {
-    
-    public final int maxPosti;
-    private Studente studenti[];
+public class Aula extends Spazio {
+
+    private Persona persone[];
     private int posizioneLibera;
 
-    public Aula(int maxPosti) {
-        this.maxPosti = maxPosti;
-        this.posizioneLibera = 0;
-        studenti = new Studente[maxPosti];
-        
+    public Aula(int maxPosti, String nome) {
+        super(maxPosti, nome);
+        persone = new Persona[maxPosti];
+        posizioneLibera = 0;
     }
-    
-    
+
     public boolean aulaVuota() {
-    
+
         return posizioneLibera == 0;
-    
+
     }
-    
+
     public boolean aulaPiena() {
-    
+
         return posizioneLibera == maxPosti;
-    
-    
+
     }
-    
-    
-    public void entra(Studente s) {
-        
-        if(aulaPiena()) {
-        
+
+    @Override
+    public void entra(Persona s) {
+
+        if (aulaPiena()) {
+
             System.out.println("L'aula è piena.");
             return;
-        
+
         }
-        
-        studenti[posizioneLibera] = s;
+
+        persone[posizioneLibera] = s;
         posizioneLibera++;
-        
-    
+
     }
-    
-    public Studente esce() {
-    
-        if(aulaVuota()) {
-        
+
+    @Override
+    public Persona esce() {
+
+        if (aulaVuota()) {
+
             System.out.println("L'aula è vuota");
             return null;
-            
+
         }
-        
-        
+
         posizioneLibera--;
-        
-        Studente s = studenti[posizioneLibera];
-        
-        studenti[posizioneLibera] = null;
-        
+
+        Persona s = persone[posizioneLibera];
+
+        persone[posizioneLibera] = null;
+
         return s;
-    
-        
-    
+
     }
-    
-    public void stampaStudentiInAula() {
-    
-    
-        for(int i = 0; i < posizioneLibera; i++) {
-        
-        
-            studenti[i].stampaInfo();
-        
+
+    @Override
+    public String toString() {
+        String s = super.toString() + "\n";
+
+        for (int i = 0; i < posizioneLibera; i++) {
+            s += persone[i].toString() + "\n";
         }
-    
-    
+        return s;
     }
-    
-    
+
 }

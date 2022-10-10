@@ -18,29 +18,23 @@ public class TestStudenti {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        
-       Studente s1, s2, s3;
-       
-        
-       System.out.println(Studente.getContatore());
-       
-       s1 = new Studente( "Mario", "Rossi");
-      
-       s2 = new Studente( "Ernesto", "Rossi");
-       
-       s3 = new Studente("Davide", "Rossi");
-       
-       
-       
-       
-      System.out.println(Studente.getContatore());
-       
-       
-       s1.stampaInfo();
-       s2.stampaInfo();
-       s3.stampaInfo();
-        
+
+        // Studente s1, s2, s3;
+
+        // System.out.println(Studente.getContatore());
+
+        // s1 = new Studente( "Mario", "Rossi");
+
+        // s2 = new Studente( "Ernesto", "Rossi");
+
+        // s3 = new Studente("Davide", "Rossi");
+
+        // System.out.println(Studente.getContatore());
+
+        // s1.stampaInfo();
+        // s2.stampaInfo();
+        // s3.stampaInfo();
+
     }
-    
+
 }

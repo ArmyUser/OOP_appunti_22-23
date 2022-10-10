@@ -9,41 +9,25 @@ package it.unisa.diem.oop.persone;
  *
  * @author lucagreco
  */
-public class Studente {
-    
+public class Studente extends Persona {
+
     private String matricola;
-    private String nome;
-    private String cognome;
     private static int contatore = 0;
-    
-    
-    
-    
 
-    public Studente(String matricola, String nome, String cognome) {
+    public Studente(String nome, String cognome, String codFiscale, String matricola) {
+        super(nome, cognome, codFiscale);
         this.matricola = matricola;
-        this.nome = nome;
-        this.cognome = cognome;
-        contatore++;
-        
     }
 
-    public Studente(String nome, String cognome) {
-     
-        this("06127000" + contatore, nome, cognome);
-        
+    public Studente(String nome, String cognome, String codFiscale) {
+        this(nome, cognome, codFiscale, "06127000" + contatore);
     }
-    
-  
-    
-    
-    
-    public static int getContatore() { 
-    
+
+    public static int getContatore() {
+
         return contatore;
-    
+
     }
-    
 
     public String getMatricola() {
         return matricola;
@@ -53,42 +37,8 @@ public class Studente {
         matricola = m;
     }
 
-    public String getNome() {
-        return nome;
+    @Override
+    public String toString() {
+        return super.toString() + "Matricola: " + matricola + "\n";
     }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getCognome() {
-        return cognome;
-    }
-
-    public void setCognome(String cognome) {
-        this.cognome = cognome;
-    }
-    
-    
-    
-    
-    public void stampaInfo() {
-    
-        System.out.println("***");
-        
-        System.out.print("Nome: ");
-        System.out.println(nome);
-        
-        System.out.print("Cognome: ");
-        System.out.println(cognome);
-        
-        System.out.print("Matricola: ");
-        System.out.println(matricola);
-    
-    
-    
-    }
-    
-    
-    
 }
